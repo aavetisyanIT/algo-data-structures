@@ -14,4 +14,4 @@ const linearSearch = (array, item) => {
 console.log(linearSearch(array, 3));
 console.log(`Count is ${count}`);
 
-//O(n) linear
+//O(n) linear time
