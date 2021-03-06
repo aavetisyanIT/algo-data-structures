@@ -1,4 +1,4 @@
-const array = [8, 1, 2, 3, 4, 5, 6, 7, 8, 9, 18, 11, 12, 13, 14, 15];
+const array = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
 let count = 0;
 
 const binarySearch = (array, item) => {
@@ -26,4 +26,24 @@ const binarySearch = (array, item) => {
 
 console.log(binarySearch(array, 13));
 console.log(`Count is ${count}`);
+//O(lon(n)) logarithmic time
+
+//Recursive way:
+
+function recursiveBinarySearch(array, item, start = 0, end = array.length) {
+	let middle = Math.floor((start + end) / 2);
+	count += 1;
+	if (item === array[middle]) {
+		return middle;
+	}
+	if (item < array[middle]) {
+		return recursiveBinarySearch(array, item, 0, middle - 1);
+	} else {
+		return recursiveBinarySearch(array, item, middle + 1, end);
+	}
+}
+
+console.log(recursiveBinarySearch(array, 5));
+console.log(`Count is ${count}`);
+
 //O(lon(n)) logarithmic time
