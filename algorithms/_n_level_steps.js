@@ -47,3 +47,4 @@ const recSteps = (n, row = 0, stair = '') => {
 
 recSteps(10);
 console.log(counter);
+//O(n^2)
