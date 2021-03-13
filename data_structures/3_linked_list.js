@@ -2,6 +2,28 @@ class LinkedList {
 	constructor() {
 		this.head = null;
 	}
+	clear() {
+		this.head = null;
+	}
+	removeFirst() {
+		if (!this.head) return;
+		return (this.head = this.head.next);
+	}
+	removeLast() {
+		if (!this.head) return;
+		if (!this.head.next) return (this.head = null);
+
+		let previous = this.head;
+		let node = previous.next;
+
+		while (node) {
+			if (!node.next) {
+				previous.next = null;
+			}
+			previous = node;
+			node = node.next;
+		}
+	}
 	getFirst() {
 		return this.head;
 	}
