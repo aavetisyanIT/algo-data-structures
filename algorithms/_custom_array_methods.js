@@ -116,6 +116,9 @@ Array.prototype.myEvery = function (callBack) {
 
 //console.log(arr.myEvery(el => el < 15));
 
+//push
+//This method adds one or more elements to the end of array and returns the new length of the array.
+
 Array.prototype.myPush = function (...args) {
 	let arrayLength = this.length;
 	for (let i = 0; i < args.length; i += 1) {
