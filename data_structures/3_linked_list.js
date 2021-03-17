@@ -59,4 +59,11 @@ class LinkedList {
 			counter++;
 		}
 	}
+	*[Symbol.iterator]() {
+		let node = this.head;
+		while (node) {
+			yield node;
+			node = node.next;
+		}
+	}
 }
