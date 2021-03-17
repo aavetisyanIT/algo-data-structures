@@ -39,6 +39,17 @@ class LinkedList {
 			node = node.next;
 		}
 	}
+	removeAt(index) {
+		if (!this.head) return;
+		if (index === 0) {
+			return (this.head = this.head.next);
+		}
+		const previous = this.getAt(index - 1);
+		//handle cases where index is greater then list length and
+		//index is greater then length by 1
+		if (!previous || !previous.next) return;
+		previous.next = previous.next.next;
+	}
 	forEach(fn) {
 		let node = this.head;
 		let counter = 0;
