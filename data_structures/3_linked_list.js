@@ -1,3 +1,10 @@
+class Node {
+	constructor(data, next = null) {
+		this.data = data;
+		this.next = next;
+	}
+}
+
 class LinkedList {
 	constructor() {
 		this.head = null;
@@ -49,6 +56,14 @@ class LinkedList {
 		//index is greater then length by 1
 		if (!previous || !previous.next) return;
 		previous.next = previous.next.next;
+	}
+	insertAt(data, index) {
+		if (!this.head) return (this.head = new Node(data));
+		if (index === 0) {
+			return (this.head = new Node(data, this.head));
+		}
+		const previous = this.getAt(index - 1) || this.getLast();
+		previous.next = new Node(data, previous.next);
 	}
 	forEach(fn) {
 		let node = this.head;
