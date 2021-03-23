@@ -65,6 +65,14 @@ class LinkedList {
 		const previous = this.getAt(index - 1) || this.getLast();
 		previous.next = new Node(data, previous.next);
 	}
+	insertLast(data) {
+		const last = this.getLast();
+		if (last) {
+			last.next = new Node(data);
+		} else {
+			this.head = new Node(data);
+		}
+	}
 	forEach(fn) {
 		let node = this.head;
 		let counter = 0;
