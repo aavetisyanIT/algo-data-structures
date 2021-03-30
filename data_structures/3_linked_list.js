@@ -9,6 +9,17 @@ class LinkedList {
 	constructor() {
 		this.head = null;
 	}
+	size() {
+		let node = this.head;
+		let count = 0;
+
+		while (node) {
+			count++;
+			node = node.next;
+		}
+		return count;
+	}
+
 	clear() {
 		this.head = null;
 	}
@@ -45,6 +56,21 @@ class LinkedList {
 			}
 			node = node.next;
 		}
+	}
+	getAt(index) {
+		if (!this.head) return null;
+
+		let node = this.head;
+		let count = 0;
+
+		while (node) {
+			if (index === count) return node;
+			count++;
+			node = node.next;
+		}
+		//if we exit the loop it means index
+		//is greater then length of the list
+		return null;
 	}
 	removeAt(index) {
 		if (!this.head) return;

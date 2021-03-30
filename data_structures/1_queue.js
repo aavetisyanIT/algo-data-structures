@@ -3,7 +3,7 @@ class Queue {
 		this.data = [];
 	}
 	add(record) {
-		this.data.unshift(data);
+		this.data.unshift(record);
 	}
 	remove() {
 		return this.data.pop();
