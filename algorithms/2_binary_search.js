@@ -34,12 +34,15 @@ function recursiveBinarySearch(array, item, start = 0, end = array.length) {
 	let middle = Math.floor((start + end) / 2);
 	count += 1;
 	if (item === array[middle]) {
-		return middle;
+		return true;
 	}
-	if (item < array[middle]) {
-		return recursiveBinarySearch(array, item, 0, middle - 1);
-	} else {
-		return recursiveBinarySearch(array, item, middle + 1, end);
+	switch (true) {
+		case item < array[middle]:
+			return recursiveBinarySearch(array, item, 0, middle - 1);
+		case item > array[middle]:
+			return recursiveBinarySearch(array, item, middle + 1, end);
+		default:
+			return false;
 	}
 }
 
