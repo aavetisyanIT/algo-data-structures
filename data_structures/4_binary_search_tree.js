@@ -6,11 +6,11 @@ class BinarySearchTreeNode {
 	}
 	insert(data) {
 		if (this.data >= data) {
-			return this.left
+			this.left
 				? this.left.insert(data)
 				: (this.left = new BinarySearchTreeNode(data));
 		} else if (this.data < data) {
-			return this.right
+			this.right
 				? this.right.insert(data)
 				: (this.right = new BinarySearchTreeNode(data));
 		}
