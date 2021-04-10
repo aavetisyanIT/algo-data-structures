@@ -83,6 +83,9 @@ class LinkedList {
 		if (!previous || !previous.next) return;
 		previous.next = previous.next.next;
 	}
+	insertFirst(data) {
+		this.head = new Node(data, this.head);
+	}
 	insertAt(data, index) {
 		if (!this.head) return (this.head = new Node(data));
 		if (index === 0) {
